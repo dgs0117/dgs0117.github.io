@@ -19,10 +19,10 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-<meta name="keywords" content="" />
+<meta name="keywords" content="Hexo" />
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ..." />
+<meta name="description" content="1.修改scaffolds目录下的post.md模板1234567模板文件内部不要保留注释部分,关键词后面请使用英文冒号title: &#123;&#123; title &#125;&#125..." />
 
 
 <meta name="robots" content="all" />
@@ -33,7 +33,7 @@
 
 <title>
     
-    Hello World |
+    hexo增加新菜单，文件归类 |
     
     Hexo
 </title>
@@ -138,9 +138,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Hello World">
+        <h1 id="hexo增加新菜单，文件归类">
             
-            Hello World
+            hexo增加新菜单，文件归类
             
         </h1>
         <div class="post-meta">
@@ -155,6 +155,8 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
+            <a class="tag-link" href="/tags/Hexo/" rel="tag">Hexo</a>
+            
         </span>
     </span>
     
@@ -163,7 +165,7 @@
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
         <span class="date-meta">
-            2019/10/21</span>
+            2019/11/04</span>
     </span>
     
     
@@ -173,19 +175,13 @@
     </div>
     
     <div class="post-body post-content">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h4 id="1-修改scaffolds目录下的post-md模板"><a href="#1-修改scaffolds目录下的post-md模板" class="headerlink" title="1.修改scaffolds目录下的post.md模板"></a>1.修改scaffolds目录下的post.md模板</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">模板文件内部不要保留注释部分,关键词后面请使用英文冒号</span><br><span class="line">title: &#123;&#123; title &#125;&#125; // 标题</span><br><span class="line">date: &#123;&#123; date &#125;&#125;   // 时间</span><br><span class="line">categories: [&apos;分类1&apos;,&apos;分类2&apos;] // 分类</span><br><span class="line">tags: [&apos;标签1&apos;,&apos;标签2&apos;]       // 标签</span><br><span class="line">comments: false    // 是否开启评论</span><br><span class="line">img:               // 自定义缩略图</span><br></pre></td></tr></table></figure>
+<h4 id="2-编辑-config-yml-找到menu将添加新的菜单food"><a href="#2-编辑-config-yml-找到menu将添加新的菜单food" class="headerlink" title="2.编辑_config.yml,找到menu将添加新的菜单food"></a>2.编辑_config.yml,找到menu将添加新的菜单food</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 不做文章归类新建菜单 favorite </span><br><span class="line">- page: food</span><br><span class="line">    directory: favorite/</span><br><span class="line">    icon: fa-star</span><br><span class="line"></span><br><span class="line">// 做文章归类新建菜单 favorite</span><br><span class="line">  - page: food</span><br><span class="line">    directory: categories/food</span><br><span class="line">    icon: fa-star</span><br></pre></td></tr></table></figure>
+<h4 id="3-添加food对应的中文翻译"><a href="#3-添加food对应的中文翻译" class="headerlink" title="3.添加food对应的中文翻译"></a>3.添加food对应的中文翻译</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果你用的时中文，即你使用的语言是 zh-CN，那么你就需要在themes主题下找到你安装的主题里找到languages文件夹，里面有个zh-CN.yml，</span><br><span class="line"></span><br><span class="line">用编辑器打开这个文件，添加food对应的中文翻译</span><br><span class="line"></span><br><span class="line">food: 美食</span><br></pre></td></tr></table></figure>
+<h4 id="4-编写文章demo"><a href="#4-编写文章demo" class="headerlink" title="4.编写文章demo"></a>4.编写文章demo</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: demo</span><br><span class="line">categories:</span><br><span class="line">- food</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
     </div>
     
@@ -204,12 +200,12 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-    <a href="/2019/10/23/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="pre-post btn btn-default" title='Hexo+Github搭建个人博客'>
-        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-        <span class="hidden-xs">
-            Hexo+Github搭建个人博客</span>
-    </a>
     
+    <a href="/2019/10/23/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="next-post btn btn-default" title='Hexo+Github搭建个人博客'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Hexo+Github搭建个人博客</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
     
 </div>
 
@@ -247,7 +243,7 @@ new Valine({
             Table of Contents
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-修改scaffolds目录下的post-md模板"><span class="toc-text">1.修改scaffolds目录下的post.md模板</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-编辑-config-yml-找到menu将添加新的菜单food"><span class="toc-text">2.编辑_config.yml,找到menu将添加新的菜单food</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-添加food对应的中文翻译"><span class="toc-text">3.添加food对应的中文翻译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-编写文章demo"><span class="toc-text">4.编写文章demo</span></a></li></ol>
         
     </div>
 </aside>
