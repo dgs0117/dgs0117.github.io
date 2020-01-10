@@ -19,12 +19,10 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-<meta name="keywords" content="养生" />
+<meta name="keywords" content="多线程" />
 
 
-<meta name="description" content="1.与君共勉1234慧极必伤情深不寿强极则辱谦谦君子，温润如玉
-
-" />
+<meta name="description" content="并发编程二、为什么要使用并发编程2004年，Intel宣布4GHz芯片的计划推迟到2005年，然后在2004年秋季，Intel宣布彻底取消4GHz的计划，也就是说摩尔定律的有效性超过了半个世纪戛..." />
 
 
 <meta name="robots" content="all" />
@@ -35,7 +33,7 @@
 
 <title>
     
-    谦谦君子，温润如玉 |
+    并发编程 |
     
     zljzy
 </title>
@@ -147,16 +145,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="谦谦君子，温润如玉">
+        <h1 id="并发编程">
             
-            谦谦君子，温润如玉
+            并发编程
             
         </h1>
         <div class="post-meta">
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a class="category-link" href="/categories/health/">health</a>
+        <a class="category-link" href="/categories/document/">document</a>
     </span>
     
     
@@ -164,7 +162,7 @@
         <i class="fa fa-tags"></i>
         <span class="tags-meta">
             
-            <a class="tag-link" href="/tags/%E5%85%BB%E7%94%9F/" rel="tag">养生</a>
+            <a class="tag-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a>
             
         </span>
     </span>
@@ -174,7 +172,7 @@
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
         <span class="date-meta">
-            2019/11/06</span>
+            2019/11/26</span>
     </span>
     
     
@@ -184,9 +182,13 @@
     </div>
     
     <div class="post-body post-content">
-        <h4 id="1-与君共勉"><a href="#1-与君共勉" class="headerlink" title="1.与君共勉"></a>1.与君共勉</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">慧极必伤</span><br><span class="line">情深不寿</span><br><span class="line">强极则辱</span><br><span class="line">谦谦君子，温润如玉</span><br></pre></td></tr></table></figure>
+        <h2 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h2><h3 id="二、为什么要使用并发编程"><a href="#二、为什么要使用并发编程" class="headerlink" title="二、为什么要使用并发编程"></a>二、为什么要使用并发编程</h3><pre><code>2004年，Intel宣布4GHz芯片的计划推迟到2005年，然后在2004年秋季，Intel宣布彻底取消4GHz的计划，也就是说摩尔定律的有效性超过了半个世纪戛然而止。但是，聪明的硬件工程师并没有停止研发的脚步，他们为了进一步提升计算速度，而不是再追求单独的计算单元，而是将多个计算单元整合到了一起，也就是形成了多核CPU。短短十几年的时间，家用型CPU,比如Intel i7就可以达到4核心甚至8核心。而专业服务器则通常可以达到几个独立的CPU，每一个CPU甚至拥有多达8个以上的内核。因此，摩尔定律似乎在CPU核心扩展上继续得到体验。因此，多核的CPU的背景下，催生了并发编程的趋势，通过并发编程的形式可以将多核CPU的计算能力发挥到极致，性能得到提升。
 
-
+另外，在特殊的业务场景下先天的就适合于并发编程。比如在图像处理领域，一张1024X768像素的图片，包含达到78万6千多个像素。即时将所有的像素遍历一边都需要很长的时间，面对如此复杂的计算量就需要充分利用多核的计算的能力。又比如当我们在网上购物时，为了提升响应速度，需要拆分，减库存，生成订单等等这些操作，就可以进行拆分利用多线程的技术完成。面对复杂业务模型，并行程序会比串行程序更适应业务需求，而并发编程更能吻合这种业务拆分 。正是因为这些优点，使得多线程技术能够得到重视，也是一名CS学习者应该掌握的：</code></pre><p>1、充分利用多核CPU的计算能力；<br>2、方便进行业务拆分，提升应用性能</p>
+<h4 id="2-1并发编程一定会使我们的程序运行的更快吗？"><a href="#2-1并发编程一定会使我们的程序运行的更快吗？" class="headerlink" title="2.1并发编程一定会使我们的程序运行的更快吗？"></a>2.1并发编程一定会使我们的程序运行的更快吗？</h4><p>答案是并不是，并发编程只有在一定的请求量或者计算量的时候才会显示出优势；</p>
+<h4 id="2-2-为什么有的时候多线程反而会变慢呢？"><a href="#2-2-为什么有的时候多线程反而会变慢呢？" class="headerlink" title="2.2 为什么有的时候多线程反而会变慢呢？"></a>2.2 为什么有的时候多线程反而会变慢呢？</h4><p>我们知道os（操作系统）执行并发操作是采用的时间片轮转算法，简单的说就是线程1先执行10ms 然后线程B在执行10ms 然后线程A又执行了10ms 线程A执行完毕 线程B又开始执行到结束</p>
+<pre><code>我们可以发现这种执行的机制，会导致cpu一会执行A线程 一会执行B线程，这就导出了一个第一个导致多线程慢的因素：线程的上下文切花需要时间</code></pre><p>补充：Java创建多线程需要OS的干预，OS需要从用户态切换到核心态 这个过程很耗费时间</p>
+<pre><code>那么简单的理解就是：如果多线程执行的速度快于单线程执行的速度，那么我们可以理解为多线程一定会在执行前做一些准备，而单线程不需要，所以当任务数或者工作量并不大的时候单线程就会很有优势；但是当任务数上来后多线程的优势就体现出来了；</code></pre><h3 id="二、并发编程的好处"><a href="#二、并发编程的好处" class="headerlink" title="二、并发编程的好处"></a>二、并发编程的好处</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
     
     <div class="post-footer">
@@ -204,17 +206,17 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-    <a href="/2019/11/25/ReentrantLock%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" class="pre-post btn btn-default" title='ReentrantLock源码分析'>
+    <a href="/2019/11/26/java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" class="pre-post btn btn-default" title='java内存模型'>
         <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
         <span class="hidden-xs">
-            ReentrantLock源码分析</span>
+            java内存模型</span>
     </a>
     
     
-    <a href="/2019/11/05/%E5%A6%82%E4%BD%95%E4%BF%9D%E6%8C%81%E8%BA%AB%E4%BD%93%E5%81%A5%E5%BA%B7/" class="next-post btn btn-default" title='如何保持身体健康'>
+    <a href="/2019/11/25/ReentrantLock%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" class="next-post btn btn-default" title='ReentrantLock源码分析'>
         <span class="hidden-lg">下一篇</span>
         <span class="hidden-xs">
-            如何保持身体健康</span><i class="fa fa-angle-right fa-fw"></i>
+            ReentrantLock源码分析</span><i class="fa fa-angle-right fa-fw"></i>
     </a>
     
 </div>
@@ -253,7 +255,7 @@ new Valine({
             Table of Contents
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-与君共勉"><span class="toc-text">1.与君共勉</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#并发编程"><span class="toc-text">并发编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二、为什么要使用并发编程"><span class="toc-text">二、为什么要使用并发编程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1并发编程一定会使我们的程序运行的更快吗？"><span class="toc-text">2.1并发编程一定会使我们的程序运行的更快吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-为什么有的时候多线程反而会变慢呢？"><span class="toc-text">2.2 为什么有的时候多线程反而会变慢呢？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、并发编程的好处"><span class="toc-text">二、并发编程的好处</span></a></li></ol></li></ol>
         
     </div>
 </aside>
