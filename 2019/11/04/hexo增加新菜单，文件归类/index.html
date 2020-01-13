@@ -22,7 +22,9 @@
 <meta name="keywords" content="Hexo" />
 
 
-<meta name="description" content="1.修改scaffolds目录下的post.md模板1234567模板文件内部不要保留注释部分,关键词后面请使用英文冒号title: &#123;&#123; title &#125;&#125..." />
+<meta name="description" content="1.修改scaffolds目录下的post.md模板模板文件内部不要保留注释部分,关键词后面请使用英文冒号
+title: {{ title }} // 标题
+date: {{ date }}  ..." />
 
 
 <meta name="robots" content="all" />
@@ -182,14 +184,28 @@
     </div>
     
     <div class="post-body post-content">
-        <h4 id="1-修改scaffolds目录下的post-md模板"><a href="#1-修改scaffolds目录下的post-md模板" class="headerlink" title="1.修改scaffolds目录下的post.md模板"></a>1.修改scaffolds目录下的post.md模板</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">模板文件内部不要保留注释部分,关键词后面请使用英文冒号</span><br><span class="line">title: &#123;&#123; title &#125;&#125; // 标题</span><br><span class="line">date: &#123;&#123; date &#125;&#125;   // 时间</span><br><span class="line">categories: [&apos;分类1&apos;,&apos;分类2&apos;] // 分类</span><br><span class="line">tags: [&apos;标签1&apos;,&apos;标签2&apos;]       // 标签</span><br><span class="line">comments: false    // 是否开启评论</span><br><span class="line">img:               // 自定义缩略图</span><br></pre></td></tr></table></figure>
-<h4 id="2-编辑-config-yml-找到menu将添加新的菜单food"><a href="#2-编辑-config-yml-找到menu将添加新的菜单food" class="headerlink" title="2.编辑_config.yml,找到menu将添加新的菜单food"></a>2.编辑_config.yml,找到menu将添加新的菜单food</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 不做文章归类新建菜单 favorite </span><br><span class="line">- page: food</span><br><span class="line">    directory: favorite/</span><br><span class="line">    icon: fa-star</span><br><span class="line"></span><br><span class="line">// 做文章归类新建菜单 favorite</span><br><span class="line">  - page: food</span><br><span class="line">    directory: categories/food</span><br><span class="line">    icon: fa-star</span><br></pre></td></tr></table></figure>
-<h4 id="3-添加food对应的中文翻译"><a href="#3-添加food对应的中文翻译" class="headerlink" title="3.添加food对应的中文翻译"></a>3.添加food对应的中文翻译</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果你用的时中文，即你使用的语言是 zh-CN，那么你就需要在themes主题下找到你安装的主题里找到languages文件夹，里面有个zh-CN.yml，</span><br><span class="line"></span><br><span class="line">用编辑器打开这个文件，添加food对应的中文翻译</span><br><span class="line"></span><br><span class="line">food: 美食</span><br></pre></td></tr></table></figure>
-<h4 id="4-编写文章demo"><a href="#4-编写文章demo" class="headerlink" title="4.编写文章demo"></a>4.编写文章demo</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: demo</span><br><span class="line">categories:</span><br><span class="line">- food</span><br><span class="line">tags:</span><br></pre></td></tr></table></figure>
+        <h4 id="1-修改scaffolds目录下的post-md模板"><a href="#1-修改scaffolds目录下的post-md模板" class="headerlink" title="1.修改scaffolds目录下的post.md模板"></a>1.修改scaffolds目录下的post.md模板</h4><pre><code>模板文件内部不要保留注释部分,关键词后面请使用英文冒号
+title: {{ title }} // 标题
+date: {{ date }}   // 时间
+categories: [&apos;分类1&apos;,&apos;分类2&apos;] // 分类
+tags: [&apos;标签1&apos;,&apos;标签2&apos;]       // 标签
+comments: false    // 是否开启评论
+img:               // 自定义缩略图</code></pre><h4 id="2-编辑-config-yml-找到menu将添加新的菜单food"><a href="#2-编辑-config-yml-找到menu将添加新的菜单food" class="headerlink" title="2.编辑_config.yml,找到menu将添加新的菜单food"></a>2.编辑_config.yml,找到menu将添加新的菜单food</h4><pre><code>// 不做文章归类新建菜单 favorite 
+- page: food
+    directory: favorite/
+    icon: fa-star
 
+// 做文章归类新建菜单 favorite
+  - page: food
+    directory: categories/food
+    icon: fa-star</code></pre><h4 id="3-添加food对应的中文翻译"><a href="#3-添加food对应的中文翻译" class="headerlink" title="3.添加food对应的中文翻译"></a>3.添加food对应的中文翻译</h4><pre><code>如果你用的时中文，即你使用的语言是 zh-CN，那么你就需要在themes主题下找到你安装的主题里找到languages文件夹，里面有个zh-CN.yml，
 
+用编辑器打开这个文件，添加food对应的中文翻译
 
-
+food: 美食</code></pre><h4 id="4-编写文章demo"><a href="#4-编写文章demo" class="headerlink" title="4.编写文章demo"></a>4.编写文章demo</h4><pre><code>title: demo
+categories:
+- food
+tags:</code></pre>
     </div>
     
     <div class="post-footer">

@@ -22,7 +22,7 @@
 <meta name="keywords" content="Spring" />
 
 
-<meta name="description" content="123456@PostConstruct该注解被用来修饰一个非静态的void（）方法。被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行，并且只会被服务器执行一次。P..." />
+<meta name="description" content="@PostConstruct该注解被用来修饰一个非静态的void（）方法。被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行，并且只会被服务器执行一次。PostCon..." />
 
 
 <meta name="robots" content="all" />
@@ -182,9 +182,14 @@
     </div>
     
     <div class="post-body post-content">
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@PostConstruct该注解被用来修饰一个非静态的void（）方法。被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行，并且只会被服务器执行一次。PostConstruct在构造函数之后执行，init（）方法之前执行。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">通常我们会是在Spring框架中使用到@PostConstruct注解 该注解的方法在整个Bean初始化中的执行顺序：</span><br><span class="line"></span><br><span class="line">Constructor(构造方法) -&gt; @Autowired(依赖注入) -&gt; @PostConstruct(注释的方法)</span><br></pre></td></tr></table></figure>
-<p>按照惯例，废话不多说，先贴示例代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class test &#123;</span><br><span class="line">    </span><br><span class="line">    private static Logger logger = LoggerFactory.getLogger(test.class);</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private User user;</span><br><span class="line"></span><br><span class="line">    @PostConstruct</span><br><span class="line">    private  void initTest() &#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        <pre><code>@PostConstruct该注解被用来修饰一个非静态的void（）方法。被@PostConstruct修饰的方法会在服务器加载Servlet的时候运行，并且只会被服务器执行一次。PostConstruct在构造函数之后执行，init（）方法之前执行。
+
+
+通常我们会是在Spring框架中使用到@PostConstruct注解 该注解的方法在整个Bean初始化中的执行顺序：
+
+Constructor(构造方法) -&gt; @Autowired(依赖注入) -&gt; @PostConstruct(注释的方法)
+
+按照惯例，废话不多说，先贴示例代码</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class test &#123;</span><br><span class="line">    </span><br><span class="line">    private static Logger logger = LoggerFactory.getLogger(test.class);</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private User user;</span><br><span class="line"></span><br><span class="line">    @PostConstruct</span><br><span class="line">    private  void initTest() &#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
     </div>
     
     <div class="post-footer">
